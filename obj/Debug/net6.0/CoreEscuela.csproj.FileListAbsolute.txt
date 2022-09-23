@@ -1,0 +1,15 @@
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\bin\Debug\net6.0\CoreEscuela.exe
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\bin\Debug\net6.0\CoreEscuela.deps.json
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\bin\Debug\net6.0\CoreEscuela.runtimeconfig.json
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\bin\Debug\net6.0\CoreEscuela.dll
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\bin\Debug\net6.0\CoreEscuela.pdb
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\obj\Debug\net6.0\CoreEscuela.csproj.AssemblyReference.cache
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\obj\Debug\net6.0\CoreEscuela.GeneratedMSBuildEditorConfig.editorconfig
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\obj\Debug\net6.0\CoreEscuela.AssemblyInfoInputs.cache
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\obj\Debug\net6.0\CoreEscuela.AssemblyInfo.cs
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\obj\Debug\net6.0\CoreEscuela.csproj.CoreCompileInputs.cache
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\obj\Debug\net6.0\CoreEscuela.dll
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\obj\Debug\net6.0\refint\CoreEscuela.dll
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\obj\Debug\net6.0\CoreEscuela.pdb
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\obj\Debug\net6.0\CoreEscuela.genruntimeconfig.cache
+D:\mio-jmario\PLATZI\csharp\CoreEscuela\obj\Debug\net6.0\ref\CoreEscuela.dll
