@@ -14,12 +14,63 @@ namespace CoreEscuela
             Inicializar();
         }
 
-        public void Inicializar(){
+        public void Inicializar()
+        {
 
-            Escuela = new Escuela("Platzi School" , "Colombia");
+            Escuela = new Escuela("Platzi School", "Colombia");
             Escuela.TipoEscuela = TiposEscuela.PreEscolar;
+            CargarCursos();
+            
+            foreach (var curso in Escuela.Cursos)
+            {
+                curso.Alumnos.AddRange(
+                    CargarAlumnos()
+                );
+            }
+            
+            CargarAsignaturas();
+            CargarEvaluaciones();
 
-            Escuela.Cursos =  new List<Curso>(){
+            ImprimirCursos(Escuela);
+
+        }
+
+        private void CargarEvaluaciones()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CargarAsignaturas()
+        {
+            foreach (var curso in Escuela.Cursos){
+                List<Asignatura> listaAsignaturas = new List<Asignatura>(){
+                    new Asignatura {Nombre = "Matemáticas"},
+                    new Asignatura {Nombre = "Educación Física"},
+                    new Asignatura {Nombre = "Castellano"},
+                    new Asignatura {Nombre = "Ciencias Naturales"}
+                };
+                curso.Asignaturas.AddRange(listaAsignaturas);
+            }
+        }
+
+        private IEnumerable<Alumno> CargarAlumnos()
+        {
+            string[] nombre1 = {"Alba", "Felipe", "Martha", "Farid" , "Álvaro"};
+            string[] apellido1 = {"Ruiz", "Montenegro", "Pelaez", "Castaño" , "Lasluisa"};
+            string[] nombre2 = {"Aurelio", "Sandra", "José", "Juliana" , "Pedro"};
+
+            var listAlumnos = from n1 in nombre1
+                              from n2 in nombre2
+                              from a1 in apellido1
+                              select new Alumno { Nombre = $"{n1} {n2} {a1}" };
+            
+            return listAlumnos;
+
+        }
+
+        private void CargarCursos()
+        {
+            Escuela.Cursos = new List<Curso>(){
                 new Curso(){
                     Nombre = "101",
                     Jornada = TiposJornada.Mañana
@@ -41,9 +92,6 @@ namespace CoreEscuela
                     Jornada = TiposJornada.Noche
                 }
             };
-
-            ImprimirCursos(Escuela);
-            
         }
 
         private static void ImprimirCursos(Escuela escuela)

@@ -6,6 +6,7 @@ namespace CoreEscuela.Entidades
     {
         string nombre;
 
+        public string UniqueId {get; private set;} = Guid.NewGuid().ToString();
         public string Nombre {
             get{return nombre ; }
             set{ nombre = value ;}
