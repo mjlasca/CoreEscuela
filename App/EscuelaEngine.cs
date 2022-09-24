@@ -20,15 +20,8 @@ namespace CoreEscuela
             Escuela = new Escuela("Platzi School", "Colombia");
             Escuela.TipoEscuela = TiposEscuela.PreEscolar;
             CargarCursos();
-            
-            foreach (var curso in Escuela.Cursos)
-            {
-                curso.Alumnos.AddRange(
-                    CargarAlumnos()
-                );
-            }
-            
             CargarAsignaturas();
+            
             CargarEvaluaciones();
 
             ImprimirCursos(Escuela);
@@ -49,11 +42,11 @@ namespace CoreEscuela
                     new Asignatura {Nombre = "Castellano"},
                     new Asignatura {Nombre = "Ciencias Naturales"}
                 };
-                curso.Asignaturas.AddRange(listaAsignaturas);
+                curso.Asignaturas = listaAsignaturas;
             }
         }
 
-        private IEnumerable<Alumno> CargarAlumnos()
+        private List<Alumno> GenerarAlumnos(int cant )
         {
             string[] nombre1 = {"Alba", "Felipe", "Martha", "Farid" , "Álvaro"};
             string[] apellido1 = {"Ruiz", "Montenegro", "Pelaez", "Castaño" , "Lasluisa"};
@@ -64,7 +57,7 @@ namespace CoreEscuela
                               from a1 in apellido1
                               select new Alumno { Nombre = $"{n1} {n2} {a1}" };
             
-            return listAlumnos;
+            return listAlumnos.OrderBy((al) => al.UniqueId).Take(cant).ToList();
 
         }
 
@@ -92,6 +85,13 @@ namespace CoreEscuela
                     Jornada = TiposJornada.Noche
                 }
             };
+
+            Random rnd = new Random();
+
+            foreach (var curso in Escuela.Cursos)
+            {
+                curso.Alumnos = GenerarAlumnos(rnd.Next(5,20));
+            }
         }
 
         private static void ImprimirCursos(Escuela escuela)
