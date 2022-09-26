@@ -5,7 +5,7 @@ using static System.Console;
 
 namespace CoreEscuela
 {
-    public class EscuelaEngine
+    public sealed class EscuelaEngine
     {
         public Escuela Escuela {get;set;}  
 
@@ -22,7 +22,13 @@ namespace CoreEscuela
             CargarCursos();
             CargarAsignaturas();
             CargarEvaluaciones();
-            ImprimirCursos(Escuela);
+            //ImprimirCursos(Escuela);
+            Printer.WriteTitle("PRUEBAS DE POLIMORFISMO");
+
+            var alumTest = new Alumno{Nombre = "Zara Corrales"};
+            ObjetoEscuelaBase obj = alumTest;
+
+            
 
         }
 
