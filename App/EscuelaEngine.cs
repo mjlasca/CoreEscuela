@@ -21,29 +21,47 @@ namespace CoreEscuela
             Escuela.TipoEscuela = TiposEscuela.PreEscolar;
             CargarCursos();
             CargarAsignaturas();
-            
             CargarEvaluaciones();
-
             ImprimirCursos(Escuela);
 
         }
 
         private void CargarEvaluaciones()
         {
-            throw new NotImplementedException();
+            foreach (var curso in Escuela.Cursos)
+            {
+                foreach (var alum in curso.Alumnos)
+                {
+                    List<Evaluacion> listEva = new List<Evaluacion>();
+                    foreach (var asig in curso.Asignaturas)
+                    {
+                        Random rnd = new Random();
+                        listEva.Add(new Evaluacion { Nombre = "Evalución 1" , Asignatura = asig, Nota = (float) (5 * rnd.NextDouble() ) });
+                        listEva.Add(new Evaluacion { Nombre = "Evalución 2" , Asignatura = asig, Nota =  (float) (5 * rnd.NextDouble() )});
+                        listEva.Add(new Evaluacion { Nombre = "Evalución 3" , Asignatura = asig, Nota =  (float) (5 * rnd.NextDouble() )});
+                        listEva.Add(new Evaluacion { Nombre = "Evalución 4" , Asignatura = asig, Nota =  (float) (5 * rnd.NextDouble() )});
+                        listEva.Add(new Evaluacion { Nombre = "Evalución 5" , Asignatura = asig, Nota =  (float) (5 * rnd.NextDouble() )});
+                    }
+
+                    alum.Evaluaciones = listEva;
+                }
+            }
         }
 
         private void CargarAsignaturas()
         {
-            foreach (var curso in Escuela.Cursos){
-                List<Asignatura> listaAsignaturas = new List<Asignatura>(){
+
+            List<Asignatura> listaAsignaturas = new List<Asignatura>(){
                     new Asignatura {Nombre = "Matemáticas"},
                     new Asignatura {Nombre = "Educación Física"},
                     new Asignatura {Nombre = "Castellano"},
                     new Asignatura {Nombre = "Ciencias Naturales"}
-                };
+            };
+
+            foreach (var curso in Escuela.Cursos){
                 curso.Asignaturas = listaAsignaturas;
             }
+
         }
 
         private List<Alumno> GenerarAlumnos(int cant )
